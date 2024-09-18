@@ -20,6 +20,7 @@ print("*" * antall_bokstaver)
 gjett = input("Gjett en bokstav: ")
 
 # Sjekk om bokstaven er i ordet
+resultat = "*" * antall_bokstaver
 if gjett in fasit:
     resultat = ""
     for bokstav in fasit:
@@ -27,6 +28,7 @@ if gjett in fasit:
             resultat += gjett
         else:
             resultat += "*"
+
 
 print("Resultat så langt:\n" + resultat)
 
