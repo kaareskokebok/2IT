@@ -46,7 +46,7 @@ while True:
 # som første linje i funksjonen
 # def test():
 #    pass
-# 2 - Gjør ferdig valg 6, ny ansatt
+# 2 - Gjør ferdig valg 6, antall ansatte
 # 3 - Gjør valg 2, ny ansatt
 # 4 - Gjør deretter resten av funksjonene
 # NB! Mye testing underveis
