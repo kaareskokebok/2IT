@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Min overskrift</h1>
+    <h1 id="h1SinID">Min overskrift</h1>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint, debitis? Modi placeat unde aspernatur autem a esse architecto facere quibusdam perspiciatis, distinctio voluptatem iste libero recusandae sequi repellendus dignissimos ut!</p>
 
     <h2>Underoverskrift</h2>
@@ -14,8 +14,51 @@
 
     <h2>Unummerert liste</h2>
     <ul>
-        <li></li>
+        <li>Punkt 1</li>
+        <li>Punkt 2</li>
+        <li>Punkt 3</li>
     </ul>
 
+    <h2>Nummerert liste</h2>
+    <ol>
+        <li>Punkt 1</li>
+        <li>Punkt 2</li>
+        <li>Punkt 3</li>
+    </ol>
+
+    <h2 id="nestetListe">Nestede lister</h2>
+    <ol>
+        <li>Punkt 1</li>
+        <li>Punkt 2 sine punkter:
+            <ul>
+                <li>2a</li>
+                <li>2b</li>
+                <li>2c med marknader
+                    <ol>
+                        <li>Først slik</li>
+                        <li>så slik</li>
+                        <li>Deretter slik</li>
+                    </ol>
+                </li>
+            </ul>
+        </li>
+        <li>Punkt 3</li>
+    </ol>
+
+    <h2>Anchor elementet</h2>
+
+    <p>Brukes for å lage lenker</p>
+    <h3>Lenker til nettsider</h3>
+
+    <ul>
+        <li><a href="https://www.vg.no">vg.no</a></li>
+        <!-- Target _blank gjør at lenken åpnes i ny fane -->
+        <li><a href="https://www.dagbladet.no" target="_blank">dagbladet.no</a></li>
+    </ul>
+
+    <h3>Lenker til andre deler av nettsiden</h3>
+
+    <p>Gå til h1: <a href="#h1SinID">Gå til h1</a></p>
+    <p><a href="#nestetListe">Gå til nestet liste</a></p>
 </body>
 </html>
