@@ -23,7 +23,20 @@ function sokBok(){
 
 function laanBok(){
     // Todo: sjekk om boka finnes først
-    // Tips: ligner på søkebok
+    let sokebok = inpSokBok.value;
+    // Tips: ligner på søkeboklet sokebok = inpSokBok.value;
+    // 2. Sjekk om boktittelen i input-feltet en av bøkene i 
+    // biblioteket
+    if (boker.includes(sokebok)) {
+        let index = boker.indexOf(sokebok);
+        boker.splice(index, 1);  // slett 1 bok på plass index
+
+        txtUt.textContent = "Boka ble utlånt. ";
+        txtUt.textContent += boker;
+    } else{
+        txtUt.textContent = "Boka finnes ikke";
+    }
+    console.log(boker);
     // Fjern fra array dersom den finnes
     // Gi tilbakemelding
 }
