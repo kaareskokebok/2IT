@@ -4,18 +4,26 @@
 // array.includes("boktittel")
 // array.indexOf("boktittel")
 
+
 function sokBok(){
     // TODO:
     // 1. Les inn bok fra input-felt
     let sokebok = inpSokBok.value;
     // 2. Sjekk om boktittelen i input-feltet en av bøkene i 
     // biblioteket
+    if (boker.includes(sokebok)) {
+        txtUt.textContent = "Boka finnes";
+    } else{
+        txtUt.textContent = "Boka finnes ikke";
+    }
+
     // 3. Gi tilbakemelding i txtUt-elementet
  
 }
 
 function laanBok(){
     // Todo: sjekk om boka finnes først
+    // Tips: ligner på søkebok
     // Fjern fra array dersom den finnes
     // Gi tilbakemelding
 }
