@@ -1,17 +1,31 @@
+
+// Hjelpefunksjon
+function finnesBok(tittel) {
+    // Søke gjennom bøkene, hvis tittel finnes
+    // return true, else return false
+    for (bok of boker) {
+        if(bok.tittel === tittel) {
+            // Avslutter funksjonen
+            return true;
+        } 
+    }
+    // Søkt gjennom alle bøkene
+    return false;
+}
+
 function sokBok(){
     // TODO:
     // 1. Les inn bok fra input-felt
     let sokebok = inpSokBok.value;
     // 2. Sjekk om boktittelen i input-feltet en av bøkene i 
     // biblioteket
-    if (boker.includes(sokebok)) {
+    // 3. Gi tilbakemelding i txtUt-elementet
+    if (finnesBok(sokebok)) {
         txtUt.textContent = "Boka finnes";
     } else{
         txtUt.textContent = "Boka finnes ikke";
     }
 
-    // 3. Gi tilbakemelding i txtUt-elementet
- 
 }
 
 function laanBok(){
