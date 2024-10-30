@@ -32,7 +32,6 @@ function laanBok(){
         boker.splice(index, 1);  // slett 1 bok på plass index
 
         txtUt.textContent = "Boka ble utlånt. ";
-        txtUt.textContent += boker;
     } else{
         txtUt.textContent = "Boka finnes ikke";
     }
