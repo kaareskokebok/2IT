@@ -35,5 +35,9 @@ let boker = [
 ];
 
 // Skrive ut tittel til den første boka
+console.log(boker[0].tittel);
+// Skrive ut forfatter til den siste boka
+let antallboker = boker.length;
+console.log(boker[antallboker - 1].forfatter);
 
 
