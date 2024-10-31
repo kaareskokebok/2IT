@@ -1,3 +1,11 @@
+let enbok = {
+        tittel: "Mysteriet i Skogen",
+        forfatter: "Kari Nordmann",
+        sider: 320
+};
+
+
+
 let boker = [
     {
         tittel: "Jenserns Gensere",
@@ -13,5 +21,4 @@ let boker = [
 
 // Skrive ut tittel til den første boka
 
-console.log("test");
 
