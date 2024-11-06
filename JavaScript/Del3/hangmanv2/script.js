@@ -20,7 +20,18 @@ function gjettBokstav() {
                 riktigGjetninger[i] = bokstav;
             }
         }
-    } 
+    } else {
+        // Ikke riktig bokstav
+        // Legg til i feilGjetninger
+        // Sjekk at bokstaven IKKE allerede er gjettet på
+        if ( !feilGjetninger.includes(bokstav) ) { 
+            feilGjetninger.push(bokstav);
+            gjenværendeForsøk--;  // minker forsøk med 1
+            oppdaterHangmanBilde();
+            document.getElementById("wrongLetters").textContent = "Feilgjetninger: " + feilGjetninger.join(", ");
+            document.getElementById("remainingAttempts").textContent = "Forsøk igjen: " + gjenværendeForsøk;
+        }
+    }
 
     document.getElementById("wordDisplay").textContent = riktigGjetninger.join(' ');
 }
