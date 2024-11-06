@@ -19,11 +19,11 @@ git remote remove origin
 1. I `nano` trykk `Ctrl + O` for å lagre, trykk `ENTER` for å godkjenne filnavnet, og til sist `Ctrl + X` for å avslutte.
 1. Gjør skriptet kjørbart:
 ```bash
-chmod +x setup_project.sh
+chmod +x setup_hangman.sh
 ```
 1. Kjør skriptet:
 ```bash
-./setup_project.sh
+./setup_hangman.sh
 ```
 
 Dette vil utføre kommandoene i skriptet:
