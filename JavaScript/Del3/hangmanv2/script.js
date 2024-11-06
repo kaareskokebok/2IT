@@ -8,12 +8,27 @@ function oppdaterHangmanBilde() {
 function gjettBokstav() {
     let inpGjett = document.getElementById("letterInput");
     let bokstav = inpGjett.value; 
+    // Tømme input-feltet
+    inpGjett.value = "";
+    
+    // Sjekk om riktig bokstav
+    if ( hemmeligOrdBokstaver.includes(bokstav) ) {
+        // alert("riktig bokstav")
+        // Hvilken plass står den riktige bokstaven på?
+        for (let i = 0; i < hemmeligOrdBokstaver.length; i++) {
+            if (bokstav === hemmeligOrdBokstaver[i]) {
+                riktigGjetninger[i] = bokstav;
+            }
+        }
+    } 
+
+    document.getElementById("wordDisplay").textContent = riktigGjetninger.join(' ');
 }
 let ordliste = ['javascript', 'html', 'css', 'programmering', 'webutvikling', 'jens'];
 // Velge et tilfeldig ord
 let tilfeldigIndex = Math.floor(Math.random()*ordliste.length);
 let hemmeligOrd = ordliste[tilfeldigIndex];
-
+alert(hemmeligOrd);
 // Feilgjetninger og forsøk igjen
 let feilGjetninger = [];
 let gjenværendeForsøk = 6;
