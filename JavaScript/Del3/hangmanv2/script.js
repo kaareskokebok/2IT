@@ -1,0 +1,32 @@
+let ordliste = ['javascript', 'html', 'css', 'programmering', 'webutvikling', 'jens'];
+// Velge et tilfeldig ord
+let tilfeldigIndex = Math.floor(Math.random()*ordliste.length);
+let hemmeligOrd = ordliste[tilfeldigIndex];
+
+// Deler opp i array av bokstaver
+let hemmeligOrdBokstaver = hemmeligOrd.split("");
+
+// Array for de riktige gjetningene
+let riktigGjetninger = [];
+for (let i = 0; i < hemmeligOrdBokstaver.length; i++) {
+    riktigGjetninger[i] = '_';
+}
+console.log(riktigGjetninger.join(" "));
+
+// Vis understrekene med mellomrom imellom bokstavene (eller _)
+document.getElementById("wordDisplay").textContent = riktigGjetninger.join(' ');
+
+// Knappen
+document.getElementById("guessButton").addEventListener("click", gjettBokstav);
+// Gjette ved å trykke på ENTER
+document.getElementById("letterInput").addEventListener("keyup", 
+    function(event) {  // event inneholder hendelsesinformasjon, mus, tast osv.
+        if(event.key === "Enter") {
+            gjettBokstav();
+        }
+    }
+);
+
+function gjettBokstav(){
+    alert("KOKO!");
+}
