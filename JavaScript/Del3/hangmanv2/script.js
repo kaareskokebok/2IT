@@ -1,7 +1,22 @@
+function oppdaterHangmanBilde() {
+    let bilde = document.getElementById("hangmanImage");
+    // Bruk gjenværendeForsøk for å velge bilde
+    let bildenr = 6 - gjenværendeForsøk;
+    bilde.src = `hangman${bildenr}.png`;
+}
+
+function gjettBokstav() {
+    let inpGjett = document.getElementById("letterInput");
+    let bokstav = inpGjett.value; 
+}
 let ordliste = ['javascript', 'html', 'css', 'programmering', 'webutvikling', 'jens'];
 // Velge et tilfeldig ord
 let tilfeldigIndex = Math.floor(Math.random()*ordliste.length);
 let hemmeligOrd = ordliste[tilfeldigIndex];
+
+// Feilgjetninger og forsøk igjen
+let feilGjetninger = [];
+let gjenværendeForsøk = 6;
 
 // Deler opp i array av bokstaver
 let hemmeligOrdBokstaver = hemmeligOrd.split("");
@@ -27,6 +42,3 @@ document.getElementById("letterInput").addEventListener("keyup",
     }
 );
 
-function gjettBokstav(){
-    alert("KOKO!");
-}
