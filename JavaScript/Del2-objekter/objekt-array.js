@@ -40,4 +40,32 @@ console.log(boker[0].tittel);
 let antallboker = boker.length;
 console.log(boker[antallboker - 1].forfatter);
 
+// Endre antall sider i den første boka til 567
+boker[0].sider = 567;
+
+// Legge til en ny bok i arrayet
+let nybok = {
+    tittel: "Hageslaktern",
+    forfatter: "Trymmern",
+    sider: 123
+};
+boker.push(nybok);
+
+// Skrive ut alle titlene
+for (const bok of boker){
+    console.log(bok.tittel);
+}
+
+// Søke etter og slette bøker med mer enn 400 sider
+for (let i = 0; i < boker.length; i++){
+    if(boker[i].sider > 400) {
+        boker.splice(i, 1);
+    }
+}
+// Skrive ut alle titlene
+for (const bok of boker){
+    console.log(bok.tittel);
+}
+
+
 
