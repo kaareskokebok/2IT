@@ -2,7 +2,7 @@ function oppdaterHangmanBilde() {
     let bilde = document.getElementById("hangmanImage");
     // Bruk gjenværendeForsøk for å velge bilde
     let bildenr = 6 - gjenværendeForsøk;
-    bilde.src = `hangman${bildenr}.png`;
+    bilde.src = `./images/hangman${bildenr}.png`;
 }
 
 function gjettBokstav() {
