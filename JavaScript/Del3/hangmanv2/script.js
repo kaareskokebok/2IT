@@ -30,6 +30,8 @@ function gjettBokstav() {
             oppdaterHangmanBilde();
             document.getElementById("wrongLetters").textContent = "Feilgjetninger: " + feilGjetninger.join(", ");
             document.getElementById("remainingAttempts").textContent = "Forsøk igjen: " + gjenværendeForsøk;
+        } else {
+            alert(`Du har allerede gjettet på ${bokstav}`);
         }
     }
 
