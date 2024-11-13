@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Bestill billetter</title>
+</head>
+<body>
+    <h1>Bestill billetter</h1>
+    <form action="/bestill" method="POST">
+        <!-- Antall voksenbilletter -->
+        <label for="voksen">Antall voksenbilletter:</label>
+        <input type="number" id="voksen" name="voksen" min="0" required>
+        <br><br>
+        <!-- Antall barnebilletter -->
+        <label for="barn">Antall barnebilletter:</label>
+        <input type="number" id="barn" name="barn" min="0" required>
+        <br><br>
+        <!-- Bestill-knapp -->
+        <input type="submit" value="Bestill">
+    </form>
+    <!-- Lenke til oversiktssiden -->
+    <p>Se oversikt over bestilte billetter: <a href="/oversikt">Klikk her</a></p>
+</body>
+</html>
