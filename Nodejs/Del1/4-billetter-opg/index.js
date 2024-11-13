@@ -80,5 +80,5 @@ app.post('/oversikt', (req, res) => {
 
 app.listen(3000, () => {
     console.log('Serveren kjører på http://localhost:3000/');
-    
+    console.log(process.env.PASSORD);
 });
