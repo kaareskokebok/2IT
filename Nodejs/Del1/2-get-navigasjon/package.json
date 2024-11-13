@@ -1,0 +1,19 @@
+{
+  "name": "get-navigasjon",
+  "version": "1.0.0",
+  "description": "Trene paa get i nodejs",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "get",
+    "nodejs"
+  ],
+  "author": "jensern",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.1"
+  }
+}
