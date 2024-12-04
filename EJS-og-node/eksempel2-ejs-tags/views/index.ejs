@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>EJS tags</h1>
+    <% let navn = "Jens" %>
+    <h2>Hei, jeg heter <%= navn %></h2>
+    <ul>
+    <% for(let i=0; i<10; i++) { %>
+        <li>Hei, jeg heter <%= navn %> for <%= i+1 %>.gang.</li>
+        <% } %>
+    </ul>
+
+    <h2>EJS data fra backend</h2>
+    <!-- const data = {
+        title: "EJS Tags",
+        seconds: new Date().getSeconds(),
+        fruits: ["apple", "banana", "cherry"],
+        htmlContent: "<em>Dette er em text</em> <strong>STERK</strong>"
+       } -->
+    <h3><%= title %></h3>
+    <p>Sekunder: <%= seconds %></p>
+    <% if (seconds % 2 === 0) { %>
+        <h1>PARTALL, SINNSYKT!</h1>
+    <% } %>
+    <h4>Frukter</h4>
+    <ul>
+        <% fruits.forEach((fruit)=> { %>
+            <li>
+                <%= fruit %>
+            </li>
+       <% }) %>
+    </ul>
+    <h4>HTML content</h4>
+    <p>
+        <%- htmlContent %>
+    </p>
+</body>
+</html>

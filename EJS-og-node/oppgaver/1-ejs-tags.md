@@ -8,8 +8,8 @@
    - I EJS-filen, vis "God morgen" hvis `hour < 12` og "God ettermiddag" ellers.
 
 3. **Lister og løkker i EJS**  
-   - Lag en server som sender en array av frukt, f.eks. `["eple", "banan", "appelsin"]`.  
-   - Vis fruktene som en liste i en `<ul>`-tag.
+   - Lag en server som sender en array av venner, f.eks. `["per", "jens", "sara"]`.  
+   - Vis vennene som en liste i en `<ul>`-tag.
 
 4. **HTML-escaping og rå utskrift**  
    - Send en variabel `htmlContent` med verdien `"<strong>Viktig melding</strong>"`.  
