@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <% if (locals.lengde) { %>
+        <h1>Du har <%= lengde %> bokstaver i navnet ditt.</h1>
+     <% } else { %>
+    <h1>Fyll inn fornavn og etternavn</h1>
+    <form action="/submit" method="post">
+        <label for="inpFornavn">Fornavn:</label>
+        <input type="text" name="fornavn" id="inpFornavn">
+        <label for="inpEtternavn">Etternavn:</label>
+        <input type="text" name="etternavn" id="inpEtternavn">
+        <input type="submit" value="Sjekk antall bokstaver">
+    </form>
+    <% } %>
+</body>
+</html>
