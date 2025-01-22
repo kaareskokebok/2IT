@@ -27,10 +27,17 @@ db.connect((err) => {
 });
 
 app.get("/", (req, res) => {
-    db.query("SELECT tittel FROM boker", (err, results) => {
-        console.log(results);
-    });
+    res.render("index.ejs");
 });
+
+app.get("/showtitles", (req, res) => {
+    db.query("SELECT tittel FROM boker;", (err, results) => {
+        // console.log(results);
+        // console.log(results[0].tittel)
+        // console.log(results[0]["tittel"])
+        res.render("index.ejs", {titles:results});
+    });
+})
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
 });

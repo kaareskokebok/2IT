@@ -1,0 +1,16 @@
+<%- include("partials/header.ejs") %>
+
+<h2>Velg funksjon</h2>
+<a href="/showtitles">Vis boktitler</a>
+<% if (locals.titles) { %>
+<h3>Våre titler</h3>
+<ul>
+<% for (let title of titles) { %>
+<li><%= title.tittel %> </li>
+<% } %>
+</ul>
+<% } %>
+
+
+
+<%- include("partials/footer.ejs") %>
