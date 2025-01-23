@@ -7,8 +7,8 @@
 
 <form action="/laanbok" method="post">
     <label for="inpBokID">Bok-ID</label>
-    <input type="text" id="inpBokID">
-    <input type="button" value="submit">
+    <input type="text" name="bokid"  id="inpBokID">
+    <input type="submit" value="Lån bok">
 </form>
 <!-- Vis tilgjengelige -->
 <% if (locals.tilgjengeligeBoker) { %>

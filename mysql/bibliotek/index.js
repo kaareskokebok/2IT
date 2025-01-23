@@ -62,7 +62,8 @@ app.get("/available", (req, res) => {
 
 app.post("/laanbok", (req, res) => {
    // I request ligger bok-id
-
+   console.log("hallo?")
+    console.log(req.body);
 });
 
 app.listen(port, () => {
