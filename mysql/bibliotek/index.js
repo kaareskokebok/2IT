@@ -47,7 +47,7 @@ app.get("/showall", (req, res) => {
         }
         res.render("index.ejs", {allInfo:results});
     });
-})
+});
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
 });
