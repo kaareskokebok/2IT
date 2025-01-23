@@ -37,6 +37,16 @@ app.get("/showtitles", (req, res) => {
         // console.log(results[0]["tittel"])
         res.render("index.ejs", {titles:results});
     });
+});
+
+app.get("/showall", (req, res) => {
+    db.query("SELECT * FROM boker;", (err, results) => {
+        if(err) {
+            console.error("Feil i spørring:", err);
+            return; // Avslutt funksjonen
+        }
+        res.render("index.ejs", {allInfo:results});
+    });
 })
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
