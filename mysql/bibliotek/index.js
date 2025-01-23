@@ -48,6 +48,23 @@ app.get("/showall", (req, res) => {
         res.render("index.ejs", {allInfo:results});
     });
 });
+
+// Ruten viser bare tilgjengelig bøker
+app.get("/available", (req, res) => {
+    db.query("SELECT * FROM boker WHERE laanestatus='tilgjengelig';", (err, results) => {
+        if(err) {
+            console.error("Feil i spørring:", err);
+            return; // Avslutt funksjonen
+        }
+        res.render("index.ejs", {tilgjengeligeBoker:results});
+    });
+});
+
+app.post("/laanbok", (req, res) => {
+   // I request ligger bok-id
+
+});
+
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
 });

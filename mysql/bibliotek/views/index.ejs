@@ -3,6 +3,23 @@
 <h2>Velg funksjon</h2>
 <a href="/showtitles">Vis boktitler</a>
 <a href="/showall">Vis all info</a>
+<a href="/available">Vis tilgjengelig bøker</a>
+
+<form action="/laanbok" method="post">
+    <label for="inpBokID">Bok-ID</label>
+    <input type="text" id="inpBokID">
+    <input type="button" value="submit">
+</form>
+<!-- Vis tilgjengelige -->
+<% if (locals.tilgjengeligeBoker) { %>
+    <h3>Våre titler med info</h3>
+    <ul>
+    <% for (let bok of tilgjengeligeBoker) { %>
+    <li><%= bok.tittel %>, <%= bok.forfatter %>, <%= bok.aar %></li>
+    <% } %>
+    </ul>
+    <% } %>
+
 <% if (locals.titles) { %>
 <h3>Våre titler</h3>
 <ul>
@@ -17,7 +34,7 @@
     <h3>Våre titler med info</h3>
     <ul>
     <% for (let bok of allInfo) { %>
-    <li><%= bok.tittel %>, <%= bok.forfatter %>, <%= bok.aar %>, <%= bok.laanestatus %> </li>
+    <li>id:<%= bok.id %>, <%= bok.tittel %>, <%= bok.forfatter %>, <%= bok.aar %>, <%= bok.laanestatus %> </li>
     <% } %>
     </ul>
     <% } %>
