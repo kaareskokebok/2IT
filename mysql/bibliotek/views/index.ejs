@@ -10,6 +10,12 @@
     <input type="text" name="bokid"  id="inpBokID">
     <input type="submit" value="Lån bok">
 </form>
+
+<!-- Tilbakemelding etter lånt bok -->
+<% if(locals.laanebok) { %>
+<p><%= laanebok %> </p>
+<% } %>
+
 <!-- Vis tilgjengelige -->
 <% if (locals.tilgjengeligeBoker) { %>
     <h3>Våre titler med info</h3>

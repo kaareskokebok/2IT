@@ -64,6 +64,28 @@ app.post("/laanbok", (req, res) => {
    // I request ligger bok-id
    console.log("hallo?")
     console.log(req.body);
+    let bokid = req.body.bokid;
+    db.query(`SELECT * FROM boker WHERE id=${bokid};`, (err, results) => {
+        if(err) {
+            console.error("Feil i spørring:", err);
+            return; // Avslutt funksjonen
+        }
+        console.log(results);
+        // Sjekk om tilgjengelig
+        if(results[0]["laanestatus"]==="tilgjengelig") {
+            // Oppdater databasen
+            db.query(`UPDATE boker SET laanestatus = 'utlånt' WHERE id = ${bokid};`, (err, results) => {
+         
+            });
+            // Gi tilbakemelding
+            res.render("index.ejs", {laanebok:"Kos deg med boka!"});
+        }
+        else{
+            // Boka ikke tilgjengelig
+            res.render("index.ejs", {laanebok:"Dessverre utlånt, prøv igjen senere."});
+        }
+        
+    });
 });
 
 app.listen(port, () => {
