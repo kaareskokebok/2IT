@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="kort"> <img src="tiles.jpg" alt="">
+    </div>
+   
+    <script>
+        function snuKort(event){
+            // document.write("test");
+            console.log(event.target);
+            // Legg til klasse som snur kortet
+            event.target.classList.add("visFront");
+    
+            setTimeout(() => {
+                event.target.src="https://picsum.photos/id/15/300";
+                // event.target.src="15.jpg";
+            }, 850);
+            setTimeout( () => {
+                event.target.classList.remove("visFront");
+                event.target.src="tiles.jpg"            }, 3000)
+        }
+        document.querySelector(".kort").addEventListener("click", snuKort);
+
+
+    </script>
+</body>
+</html>

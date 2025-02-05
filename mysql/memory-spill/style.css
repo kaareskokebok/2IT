@@ -1,0 +1,10 @@
+img{
+    transition:3s;
+    width: 300px;
+    height:300px;
+}
+
+.visFront{
+    transform: rotateY(180deg);
+}
+
