@@ -1,10 +1,32 @@
-img{
-    transition:3s;
-    width: 300px;
-    height:300px;
-}
 
-.visFront{
-    transform: rotateY(180deg);
-}
+/* Basis-stil: 2 kolonner */
+#gameBoard {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 500px; /* Sett gjerne en max bredde om du vil unngå at det strekker seg for bredt */
+    margin: 0 auto;    /* Sentrerer innholdet i midten */
+    padding: 30px;
+    max-height:90vh !important;
 
+  }
+  
+  /* Fra 700px skjermbredde og oppover: 4 kolonner */
+  @media (min-width: 400px) {
+    #gameBoard {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  #gameBoard img {
+    width: 100%;   /* Fyll hele kolonnebredden */
+    height: auto;  /* Behold proporsjonene */
+    display: block;
+    object-fit: cover; /* Valgfritt: beskjær bilde for å fylle ruten */
+    transition: 2s;
+  }
+  body {
+    margin: 0;
+    height:100vh;
+    font-family: sans-serif;
+  }

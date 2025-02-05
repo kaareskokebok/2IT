@@ -1,33 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <div class="kort"> <img src="tiles.jpg" alt="">
-    </div>
-   
-    <script>
-        function snuKort(event){
-            // document.write("test");
-            console.log(event.target);
-            // Legg til klasse som snur kortet
-            event.target.classList.add("visFront");
-    
-            setTimeout(() => {
-                event.target.src="https://picsum.photos/id/15/300";
-                // event.target.src="15.jpg";
-            }, 850);
-            setTimeout( () => {
-                event.target.classList.remove("visFront");
-                event.target.src="tiles.jpg"            }, 3000)
-        }
-        document.querySelector(".kort").addEventListener("click", snuKort);
 
+<body>
+
+    <div id="gameBoard"></div>
+
+    </div>
+
+    <script>
+
+        document.addEventListener("DOMContentLoaded", (event) => {
+            // Velg tilfeldig id
+            let bildeElementer = [];
+            // Lag de 16 bildeelementene
+            for (let i = 0; i < 16; i++) {
+                let imgElement = document.createElement("img");
+                gameBoard.appendChild(imgElement);
+                bildeElementer.push(imgElement);
+            }
+            // Hent 8 tilfeldige bilder
+            // for hvert bilde, plasser de på to ulike
+            // tilfeldige plasser
+            for (let i=0; i<8; i++) {
+                let gameBoard = document.getElementById("gameBoard");
+                let id = Math.floor(Math.random() * 200) + 1;
+                let imgURL = `https://picsum.photos/id/${id}/200`;
+                // Legg til bildet første plassering
+                let index = Math.floor(Math.random()*bildeElementer.length)
+                let imgElement = bildeElementer[index];
+                bildeElementer.splice(index,1);
+                imgElement.src = imgURL;
+            
+                // Legg til bildet andre plassering
+                index = Math.floor(Math.random()*bildeElementer.length)
+                imgElement = bildeElementer[index];
+                bildeElementer.splice(index,1);
+                imgElement.src = imgURL;
+
+            }
+            
+        });
 
     </script>
 </body>
+
 </html>
