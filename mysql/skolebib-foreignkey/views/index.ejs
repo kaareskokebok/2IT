@@ -19,11 +19,20 @@
    <a href="/boker"><button >Vis bøker</button></a>
    <!-- LAG EN FIN TABELL SOM VISER BOKDATAENE -->
     <% if (locals.boker) { %>
-        <ul>
+        <table>
+            <thead>
+<th>Tittel</th>
+<th>Utgivelsesår</th>
+<th>Fornavn</th>
+<th>Etternavn</th>
+<th>Fødselsår</th>
+            </thead>
+            <tbody>
             <% for (let bok of boker) { %>
-                
+                <!-- Lag ny rad <tr> for hver bok, og hver opplysning går inn i et <td> element -->
                 <% } %>
-        </ul>
+            </tbody>
+            </table>
         
    <% } %>
 </body>
