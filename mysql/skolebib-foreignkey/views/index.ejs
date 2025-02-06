@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Bøker og forfattere</h1>
+    <a href="/forfattere"><button >Vis forfattere</button></a>
+    <% if (locals.forfattere) { %>
+        <ul>
+            <% for (let forfatter of forfattere) { %>
+                <li>Etternavn: <%= forfatter.etternavn %>, Fornavn: <%= forfatter.fornavn %></li>
+                <% } %>
+        </ul>
+
+   <% } %>
+   <a href="/boker"><button >Vis bøker</button></a>
+   <!-- LAG EN FIN TABELL SOM VISER BOKDATAENE -->
+    <% if (locals.boker) { %>
+        <ul>
+            <% for (let bok of boker) { %>
+                
+                <% } %>
+        </ul>
+        
+   <% } %>
+</body>
+</html>
