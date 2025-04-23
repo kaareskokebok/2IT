@@ -9,7 +9,9 @@ app.use(express.static("public"));
 // For å lese fra skjema med req.body
 app.use(express.urlencoded({ extended:true }));
 
-
+app.get("/", (req, res)=> {
+    res.render("index.ejs");
+});
 
 app.post("/paamelding", (req, res) => {
     console.log(req.body);
@@ -19,14 +21,9 @@ app.post("/paamelding", (req, res) => {
     const stykkpris = 150;
     let pris = antall * stykkpris;
     // Send tilbakemelding
-    const kvittering = `<h2>Kvittering på påmelding</h2>
-    <ul><li>Antall personer: ${antall}</li>
-    <li>Pris pr stk: ${stykkpris}</li>
-    <li>Totalpris: ${pris} kr</li>
-    </ul>
-    `
-    // Send html tilbake til frontend
-    res.send(kvittering);
+    
+    // Send data til index.ejs
+    res.render("index.ejs", {antall, stykkpris, pris});
 });
 
 app.listen(PORT, () => {
