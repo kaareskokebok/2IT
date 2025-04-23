@@ -1,0 +1,16 @@
+{
+  "name": "1-hei-verden",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "1. Start nodeprosjekt i mappa 1-hei-verden: ```bash npm init -y ``` 2. Installer express: ```bash npm i express ``` 3. Lag `app.js` og `index.html` (som plasseres i public-mappa) 4. Skriv kode slik at når serveren kjører, så vil index.html vises fram med meldingen \"Hei verden!\".",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
